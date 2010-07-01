@@ -37,7 +37,7 @@ Add more actions to the "main" controller by editing "/js/controllers/main_contr
       });
     };
     
-    ---
+---
 
     //
     // "/js/views/main/my_new_awesome_action.haml"
