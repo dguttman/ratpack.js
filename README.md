@@ -114,4 +114,4 @@ Now that RatPack is up and running make it fit your needs.
 
 ### Special Thanks
 
-Ari Lerner and [Beehive](http://github.com/auser/beehive) - the birthplace of RatPack
+[Ari Lerner](http://willcodeforfoo.com/) and [Beehive](http://github.com/auser/beehive) - the birthplace of RatPack
