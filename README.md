@@ -65,6 +65,10 @@ Now that RatPack is up and running make it fit your needs.
       
         %p
           And this is the haml template for it...
+          
+        %p
+          Let's link back to 
+          = link_to("the index", "#/main")
     
 * Or, add more controllers by creating new controller files in *"/js/controllers/"* and listing them in *"/js/app.js"*
 
