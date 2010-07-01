@@ -15,7 +15,24 @@ If you want to build a fast client-side javascript app that lets you easily sepa
   
 Now that RatPack is up and running make it fit your needs.
 
-* By default your root path ("#/") will redirect to the "index" action of the "main" controller ("#/main"). Change this in "/js/controllers/application_controller.js"
+* By default your root path ("#/") will redirect to the "index" action of the "main" controller ("#/main"). Change this in "/js/controllers/application_controller.js". This is also where you change your default selector:
+
+        //
+        // "/js/controllers/application_controller.js"
+        //
+
+        var application_controller = function(app) {
+          
+          // change your default selector here:
+          this.element_selector = '#main';    
+
+          this.get("#/", function(context) {
+            // this defines your root action, 
+            // by default we will just redirect
+            this.redirect("#/main");
+          });
+
+        };
 
 * You can edit the logic in "/js/controllers/main_controller.js" and the template in "/js/views/main/index.haml".
 
@@ -51,7 +68,42 @@ Now that RatPack is up and running make it fit your needs.
     
 * Or, add more controllers by creating new controller files in "/js/controllers/" and listing them in "/js/app.js"
 
-* Change the behavior of your root path and the default selector in "/js/controllers/application_controller.js"
+        //
+        // "/js/controllers/new_awesome_controller.js"
+        //
+        
+        var new_awesome_controller = function(app) {
+          
+          this.get("#/new_awesome_controller", function(context) {
+            // this is logic for the index action...
+          });
+          
+          this.get("#/new_awesome_controller/another_action", function(context) {
+            // another action here...
+          });
+          
+        };
+        
+    ---
+    
+        //
+        // "/js/app.js"
+        //
+        
+        (function($) {
+
+          $(function() {
+            var opts = {
+              plugins: ["Haml", "JSON"],
+              
+              // now we add the new controller...
+              controllers: ["application", "main", "new_awesome_controller"]
+            };
+            RatPack(opts).run();
+          });
+
+        })(jQuery);
+
 
 ### Credits
 
