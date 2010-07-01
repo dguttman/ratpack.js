@@ -1,0 +1,51 @@
+html {
+  background: #fcf8f8;
+  font-size: 85%;
+  color: #222;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+body, html {
+  margin:0;
+  padding:0;
+}
+
+a {
+  text-decoration: none;
+  color: #336;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #558;
+}
+
+body {
+  text-align: center;
+}
+
+#wrapper {
+  width: 760px;
+  margin: 0 auto;
+}
+
+#hd {
+  text-align: center;
+  font-size: 200%;
+  height: 3em;
+}
+
+#bd {
+  text-align: left;
+}
+
+#nav {
+  width: 160px;
+  font-size: 110%;
+  float: left;
+}
+
+#content {
+  width: 600px;
+  float: right;
+}

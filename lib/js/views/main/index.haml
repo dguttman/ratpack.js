@@ -1,2 +1,26 @@
 %h3
-  This is Main Index
+  = current_controller + "::" + current_action
+
+%p
+  This is the 
+  = '"' + current_action + '" '
+  action of the 
+  = '"' + current_controller + '" '
+  controller. 
+
+%p
+  This action responds to the route 
+  = '"' + current_route + '".'
+  
+%p
+  You can edit the logic in 
+  = '"' + current_controller_file + '" '
+  and the template in 
+  = '"' + current_view_file + '". '
+  
+%p
+  Add more actions by editing 
+  = '"' + current_controller_file + '" '
+  
+%p
+  Or, add more controllers by creating new controller files in "/js/controllers/" and listing them in "/js/app.js"
