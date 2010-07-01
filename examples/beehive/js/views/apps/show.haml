@@ -1,0 +1,50 @@
+%h2= application.name
+
+%h4 Details
+
+%table
+  %thead
+    %tr
+      %th name
+      %th url
+      %th branch
+      %th template
+      %th owners
+      %th updated_at
+      %th type
+      %th delete
+  %tfoot
+    %tr
+      %td ...
+  %tbody
+    %tr
+      %td= link_to(application.name, "#/apps/"+ application.name)
+      %td= application.url
+      %td= application.branch
+      %td= application.template
+      %td= application.owners
+      %td= application.updated_at
+      %td= application.type
+      %td= link_to("delete?", "#/apps/delete/"+ application.name, {class: "delete"})
+
+:if application.latest_error != "undefined"
+  %h4 Latest Error
+  
+  %table
+    %thead
+      %tr
+        %th stage
+        %th stderr
+        %th stdout
+        %th exit_status
+        %th timestamp
+    %tfoot
+      %tr
+        %td ...
+    %tbody
+      %tr
+        %td= application.latest_error.stage
+        %td= application.latest_error.stderr
+        %td= application.latest_error.stdout
+        %td= application.latest_error.exit_status
+        %td= application.latest_error.timestamp

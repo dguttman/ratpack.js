@@ -1,0 +1,31 @@
+%h3
+  Apps
+
+#new_app_button
+  = link_to("New App", "#/apps/new")
+
+%table
+  %thead
+    %tr
+      %th name
+      %th url
+      %th branch
+      %th template
+      %th owners
+      %th updated_at
+      %th type
+      %th latest_error
+  %tfoot
+    %tr
+      %td ...
+  %tbody
+    :each app in apps
+      %tr
+        %td= link_to(app.name, "#/apps/" + app.name)
+        %td= app.url
+        %td= app.branch
+        %td= app.template
+        %td= app.owners
+        %td= app.updated_at
+        %td= app.type
+        %td= app.latest_error.timestamp

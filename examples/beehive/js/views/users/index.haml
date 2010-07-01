@@ -1,0 +1,16 @@
+%h3
+  Users
+  
+%table
+  %thead
+    %tr
+      %th Email
+      %th Level
+  %tfoot
+    %tr
+      %td ...
+  %tbody
+    :each user in users
+      %tr
+        %td= user.email
+        %td= user.level
